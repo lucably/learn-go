@@ -33,6 +33,39 @@ func DeclarationExemple() {
 	fmt.Printf("variavelGlobal: %v, Tipo: %T \n", variavelGlobal, variavelGlobal);
 }
 
+func fmtExemplePrint() {
+	//Sprint => Valor nao é jogado na tela e sim em uma variavel.
+	x := "Hello";
+	y := "World";
+
+	result := fmt.Sprint(x, " ", y, "\n");
+
+	fmt.Print(result);
+
+}
+
+type idade int 
+
+func criandoMeuTipo() {
+
+	var minhaIdade idade = 20 
+	fmt.Print(minhaIdade, "\n")
+
+	comparaIdade := 20 //Valor do tipo INT.
+
+	/*
+	porem se tentar comparar o tipo int com o tipo idade ele da divergencia.
+
+		fmt.Print(minhaIdade == comparaIdade)
+
+	para corrigir basta transformar a variavel do tipo IDADE em INT.
+	*/
+	fmt.Print(int(minhaIdade) == comparaIdade)
+
+}
+
 func main() {
 	DeclarationExemple();
+	fmtExemplePrint();
+	criandoMeuTipo();
 }
